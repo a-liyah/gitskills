@@ -19,28 +19,14 @@ public class SchoolSystem {
  }
 // 判断是否添加成功
  public boolean addStudent(int stuType) {
-	  switch(stuType) {
-	  case 1:
-	   if(maxStudent[0]-currentStudent[0]>0) {
-	    currentStudent[0]+=1;
-	      return true;
-	   }
-	   else return false;
-	  case 2:
-	   if(maxStudent[1]-currentStudent[1]>0) {
-	    currentStudent[1]+=1;
-	      return true;
-	   }
-	   else return false;
-	  case 3:
-	   if(maxStudent[2]-currentStudent[2]>0) {
-	    currentStudent[2]+=1;
-	      return true;
-	   }
-	   else return false;
-	    }
-	 return false;
-	  }
+     if(currentStudent[stuType-1]<maxStudent[stuType-1]){
+         currentStudent[stuType-1]+=1;
+         return true;
+     }else{
+         return false;
+     }
+ }
+
 
  public void print(){
 	  System.out.println(this.result);
