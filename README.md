@@ -17,6 +17,8 @@ public class SchoolSystem {
   for(int i=0;i<currentStudent.length;i++)
    currentStudent[i]=0;
  }
+
+
 // 判断是否添加成功
  public boolean addStudent(int stuType) {
      if(currentStudent[stuType-1]<maxStudent[stuType-1]){
@@ -25,6 +27,7 @@ public class SchoolSystem {
      }else{
          return false;
      }
+
  }
 
 
