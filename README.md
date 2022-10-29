@@ -27,7 +27,6 @@ public class SchoolSystem {
      }
  }
 
-
  public void print(){
 	  System.out.println(this.result);
 	 }
@@ -43,6 +42,7 @@ public class SchoolSystem {
      return list;
      //按格式输入字符串，分析字符串，获得相关参数存储到列表中并返回
  }
+
  public static void main(String[] args) {
      Scanner sc = new Scanner(System.in);
      String input = sc.nextLine();
@@ -50,8 +50,10 @@ public class SchoolSystem {
      // System.out.println(params);
      SchoolSystem schoolSystem=new SchoolSystem(params.get(0),params.get(1),params.get(2));
      for(int i=3;i<params.size();i++) {
-         schoolSystem.result.add(schoolSystem.addStudent(params.get(i)));
-     }
+           schoolSystem.result.add(schoolSystem.addStudent(params.get(i)));
+	 }
+
      schoolSystem.print();
  }
 	}
+
