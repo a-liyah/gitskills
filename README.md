@@ -27,6 +27,16 @@ public class SchoolSystem {
      }
  }
 
+ public boolean delStudent(Integer stuType) {
+     if(currentStudent[stuType]>0){
+         currentStudent[stuType]-=1;
+         return true;
+     }
+     else{
+         return false;
+     }
+ }
+
  public void print(){
 	  System.out.println(this.result);
 	 }
@@ -50,9 +60,13 @@ public class SchoolSystem {
      // System.out.println(params);
      SchoolSystem schoolSystem=new SchoolSystem(params.get(0),params.get(1),params.get(2));
      for(int i=3;i<params.size();i++) {
-           schoolSystem.result.add(schoolSystem.addStudent(params.get(i)));
-	 }
-
+        //  schoolSystem.result.add(schoolSystem.addStudent(params.get(i)));
+    	 if(params.get(i)>0)
+    		 schoolSystem.result.add(schoolSystem.addStudent(params.get(i)));
+    	 else
+        //   处理参数，将-1、-2、-3转化成current中对应的地址下标0、1、2， Math.abs是求绝对值
+    		 schoolSystem.result.add(schoolSystem.delStudent(Math.abs(params.get(i))-1));
+     }
      schoolSystem.print();
  }
 	}
