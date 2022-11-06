@@ -22,11 +22,21 @@ public class SchoolSystem {
      if(currentStudent[stuType-1]<maxStudent[stuType-1]){
          currentStudent[stuType-1]+=1;
          return true;
-     }else{
+     }
+     else{
          return false;
      }
  }
 
+ public boolean delStudent(Integer stuType) {
+     if(currentStudent[stuType]>0){
+         currentStudent[stuType]-=1;
+         return true;
+     }
+     else{
+         return false;
+     }
+ }
 
  public void print(){
 	  System.out.println(this.result);
